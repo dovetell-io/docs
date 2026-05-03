@@ -11,154 +11,83 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --blurple:#5865F2;
-  --blurple-dark:#3B45C4;
-  --blurple-light:#D8DAFD;
-  --blurple-pale:#EEF0FE;
-  --near-black:#1A1A2E;
-  --ink:#0F0F1A;
-  --text:#2D2D3F;
-  --muted:#6B7280;
-  --border:#E5E7EB;
-  --surface:#F9FAFB;
-  --white:#FFFFFF;
+  --blurple:#5865F2;--blurple-dark:#3B45C4;--blurple-light:#D8DAFD;
+  --blurple-pale:#EEF0FE;--near-black:#1A1A2E;--ink:#0F0F1A;
+  --text:#2D2D3F;--muted:#6B7280;--border:#E5E7EB;
+  --surface:#F9FAFB;--white:#FFFFFF;
   --sans:'Plus Jakarta Sans',sans-serif;
   --serif:'Fraunces',Georgia,serif;
   --mono:'JetBrains Mono',monospace;
+  --green:#16A34A;--amber:#D97706;--red:#DC2626;--purple:#7C3AED;
 }
-
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);color:var(--text);background:var(--white);min-height:100vh}
 
-/* ── LAYOUT ── */
-.shell{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+/* LAYOUT */
+.shell{display:grid;grid-template-columns:268px 1fr;min-height:100vh}
 
-/* ── SIDEBAR ── */
-.sidebar{
-  background:var(--ink);
-  position:sticky;top:0;height:100vh;
-  overflow-y:auto;
-  display:flex;flex-direction:column;
-  padding:0;
-  border-right:1px solid rgba(255,255,255,0.06);
-}
+/* SIDEBAR */
+.sidebar{background:var(--ink);position:sticky;top:0;height:100vh;overflow-y:auto;display:flex;flex-direction:column;border-right:1px solid rgba(255,255,255,0.06)}
 .sidebar-top{padding:28px 24px 20px;border-bottom:1px solid rgba(255,255,255,0.06)}
 .sidebar-wordmark{font-size:17px;font-weight:800;letter-spacing:-0.03em;color:#fff;text-decoration:none;display:flex;align-items:center;gap:8px}
 .sidebar-wordmark em{font-style:normal;color:var(--blurple-light)}
 .sidebar-wordmark-sub{font-size:11px;font-weight:500;color:rgba(255,255,255,0.35);margin-top:2px;font-family:var(--mono);letter-spacing:0.06em}
 .sidebar-nav{padding:20px 0;flex:1}
-.nav-group{margin-bottom:28px}
-.nav-group-label{
-  font-family:var(--mono);font-size:10px;letter-spacing:0.14em;
-  text-transform:uppercase;color:rgba(255,255,255,0.3);
-  padding:0 24px;margin-bottom:6px;display:block;
-}
-.nav-link{
-  display:flex;align-items:center;gap:10px;
-  padding:7px 24px;font-size:13px;font-weight:500;
-  color:rgba(255,255,255,0.55);text-decoration:none;
-  transition:all 0.15s;border-left:2px solid transparent;
-}
+.nav-group{margin-bottom:24px}
+.nav-group-label{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3);padding:0 24px;margin-bottom:4px;display:block}
+.nav-link{display:flex;align-items:center;gap:10px;padding:7px 24px;font-size:13px;font-weight:500;color:rgba(255,255,255,0.55);text-decoration:none;transition:all 0.15s;border-left:2px solid transparent;cursor:pointer}
 .nav-link:hover{color:#fff;background:rgba(255,255,255,0.04)}
-.nav-link.active{
-  color:#fff;border-left-color:var(--blurple);
-  background:rgba(88,101,242,0.12);
-}
-.nav-link-icon{font-size:14px;width:18px;text-align:center;flex-shrink:0}
-.sidebar-footer{
-  padding:16px 24px;border-top:1px solid rgba(255,255,255,0.06);
-  font-size:11px;color:rgba(255,255,255,0.25);font-family:var(--mono);
-}
+.nav-link.active{color:#fff;border-left-color:var(--blurple);background:rgba(88,101,242,0.12)}
+.nav-link-icon{font-size:13px;width:18px;text-align:center;flex-shrink:0}
+.sidebar-footer{padding:16px 24px;border-top:1px solid rgba(255,255,255,0.06);font-size:11px;color:rgba(255,255,255,0.25);font-family:var(--mono)}
 .sidebar-footer a{color:rgba(255,255,255,0.4);text-decoration:none}
 .sidebar-footer a:hover{color:rgba(255,255,255,0.7)}
 
-/* ── MAIN CONTENT ── */
+/* MAIN */
 .main{overflow-y:auto}
-.content-header{
-  border-bottom:1px solid var(--border);
-  padding:20px 48px;
-  display:flex;align-items:center;justify-content:space-between;
-  position:sticky;top:0;background:rgba(255,255,255,0.95);
-  backdrop-filter:blur(8px);z-index:10;
-}
+.content-header{border-bottom:1px solid var(--border);padding:18px 48px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);z-index:10}
 .breadcrumb{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
 .breadcrumb span{color:var(--text);font-weight:600}
-.header-actions{display:flex;gap:12px;align-items:center}
-.btn-site{
-  font-size:12px;font-weight:600;color:var(--blurple);
-  text-decoration:none;padding:6px 14px;border:1.5px solid var(--blurple-light);
-  border-radius:6px;transition:all 0.2s;
-}
+.btn-site{font-size:12px;font-weight:600;color:var(--blurple);text-decoration:none;padding:6px 14px;border:1.5px solid var(--blurple-light);border-radius:6px;transition:all 0.2s}
 .btn-site:hover{background:var(--blurple-pale)}
+.menu-btn{display:none;align-items:center;justify-content:center;width:36px;height:36px;border:1.5px solid var(--border);border-radius:8px;background:var(--white);cursor:pointer}
 
-/* ── CONTENT AREA ── */
+/* CONTENT */
 .content{max-width:720px;padding:56px 48px 100px}
-
-/* SECTION PANELS */
 .doc-section{display:none}
 .doc-section.active{display:block}
 
 /* TYPOGRAPHY */
-.doc-eyebrow{
-  font-family:var(--mono);font-size:11px;letter-spacing:0.12em;
-  text-transform:uppercase;color:var(--blurple);margin-bottom:16px;
-}
-.doc-h1{
-  font-family:var(--serif);font-size:clamp(32px,3.5vw,46px);
-  font-weight:300;letter-spacing:-0.02em;line-height:1.15;
-  color:var(--ink);margin-bottom:16px;
-}
+.doc-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--blurple);margin-bottom:16px}
+.doc-h1{font-family:var(--serif);font-size:clamp(30px,3.5vw,44px);font-weight:300;letter-spacing:-0.02em;line-height:1.15;color:var(--ink);margin-bottom:16px}
 .doc-h1 em{font-style:italic;color:var(--blurple)}
-.doc-lead{
-  font-size:17px;color:var(--muted);line-height:1.75;
-  margin-bottom:40px;max-width:560px;
-  border-bottom:1px solid var(--border);padding-bottom:40px;
-}
-h2{
-  font-size:18px;font-weight:700;letter-spacing:-0.01em;
-  color:var(--ink);margin:40px 0 12px;
-}
+.doc-lead{font-size:17px;color:var(--muted);line-height:1.75;margin-bottom:40px;max-width:560px;border-bottom:1px solid var(--border);padding-bottom:40px}
+h2{font-size:17px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);margin:40px 0 12px}
 h3{font-size:14px;font-weight:700;color:var(--ink);margin:24px 0 8px}
 p{font-size:14px;line-height:1.8;color:var(--text);margin-bottom:14px}
 p:last-child{margin-bottom:0}
 ul,ol{padding-left:20px;margin-bottom:14px}
 li{font-size:14px;line-height:1.75;color:var(--text);margin-bottom:4px}
 strong{font-weight:700;color:var(--ink)}
-em{font-style:italic}
-code{
-  font-family:var(--mono);font-size:12px;
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:4px;padding:1px 6px;color:var(--blurple);
-}
-pre{
-  background:var(--ink);border-radius:10px;
-  padding:20px 24px;margin:20px 0;overflow-x:auto;
-}
-pre code{
-  background:none;border:none;padding:0;
-  color:rgba(255,255,255,0.85);font-size:12px;line-height:1.7;
-}
+code{font-family:var(--mono);font-size:12px;background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:1px 6px;color:var(--blurple)}
+pre{background:var(--ink);border-radius:10px;padding:20px 24px;margin:20px 0;overflow-x:auto}
+pre code{background:none;border:none;padding:0;color:rgba(255,255,255,0.85);font-size:12px;line-height:1.7}
 a{color:var(--blurple);text-decoration:none}
 a:hover{text-decoration:underline}
+hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 
-/* CALLOUT BOXES */
-.callout{
-  border-left:3px solid var(--blurple);background:var(--blurple-pale);
-  border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0;
-}
+/* CALLOUTS */
+.callout{border-left:3px solid var(--blurple);background:var(--blurple-pale);border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0}
 .callout p{font-size:13px;color:var(--near-black);margin:0;line-height:1.65}
 .callout strong{color:var(--blurple)}
-
-.callout-warn{border-left-color:#D97706;background:#FEF3C7}
+.callout-warn{border-left-color:var(--amber);background:#FEF3C7}
 .callout-warn p{color:#78350F}
+.callout-green{border-left-color:var(--green);background:#F0FDF4}
+.callout-green p{color:#14532D}
 
 /* TABLE */
 table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px}
-th{
-  text-align:left;padding:10px 14px;
-  background:var(--surface);border-bottom:2px solid var(--border);
-  font-weight:700;color:var(--ink);font-size:12px;letter-spacing:0.03em;
-}
+th{text-align:left;padding:10px 14px;background:var(--surface);border-bottom:2px solid var(--border);font-weight:700;color:var(--ink);font-size:12px;letter-spacing:0.03em}
 td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text);vertical-align:top}
 tr:last-child td{border-bottom:none}
 
@@ -175,390 +104,446 @@ tr:last-child td{border-bottom:none}
 .level-name{font-size:15px;font-weight:800;letter-spacing:-0.02em;color:var(--ink);margin-bottom:6px}
 .level-desc{font-size:12px;color:var(--muted);line-height:1.55}
 
-/* FLOW DIAGRAM */
+/* FLOW */
 .flow{display:flex;flex-direction:column;gap:0;margin:20px 0}
 .flow-step{display:flex;align-items:flex-start;gap:16px;padding:14px 0;border-bottom:1px solid var(--border)}
 .flow-step:last-child{border-bottom:none}
-.flow-num{
-  width:28px;height:28px;border-radius:8px;
-  background:var(--blurple-pale);color:var(--blurple);
-  font-family:var(--mono);font-size:12px;font-weight:700;
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-}
-.flow-body{}
+.flow-num{width:28px;height:28px;border-radius:8px;background:var(--blurple-pale);color:var(--blurple);font-family:var(--mono);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .flow-title{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
 .flow-desc{font-size:12px;color:var(--muted);line-height:1.55}
 
-/* ID TABLE */
+/* ID GRID */
 .id-grid{display:grid;grid-template-columns:auto 1fr;gap:0;margin:20px 0;border:1px solid var(--border);border-radius:10px;overflow:hidden}
 .id-row{display:contents}
-.id-key{
-  font-family:var(--mono);font-size:13px;font-weight:500;
-  color:var(--blurple);background:var(--surface);
-  padding:12px 16px;border-bottom:1px solid var(--border);
-}
-.id-val{
-  font-size:13px;color:var(--text);line-height:1.6;
-  padding:12px 16px;border-bottom:1px solid var(--border);
-}
-.id-row:last-child .id-key,
-.id-row:last-child .id-val{border-bottom:none}
+.id-key{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--blurple);background:var(--surface);padding:12px 16px;border-bottom:1px solid var(--border)}
+.id-val{font-size:13px;color:var(--text);line-height:1.6;padding:12px 16px;border-bottom:1px solid var(--border)}
+.id-row:last-child .id-key,.id-row:last-child .id-val{border-bottom:none}
+
+/* ROLE CARDS */
+.role-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+.role-card{border:1.5px solid var(--border);border-radius:10px;padding:18px}
+.role-name{font-size:14px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.role-who{font-size:12px;color:var(--muted);margin-bottom:10px}
+.role-perms{display:flex;flex-wrap:wrap;gap:5px}
+.perm{font-family:var(--mono);font-size:10px;padding:2px 7px;border-radius:3px}
+.perm-yes{background:#DCFCE7;color:#166534}
+.perm-no{background:var(--surface);color:var(--muted)}
+
+/* MODE CARDS */
+.mode-grid{display:flex;flex-direction:column;gap:12px;margin:20px 0}
+.mode-card{border:1.5px solid var(--border);border-radius:10px;padding:18px;display:flex;gap:16px;align-items:flex-start}
+.mode-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.mode-label{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--blurple);margin-bottom:4px}
+.mode-title{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.mode-desc{font-size:13px;color:var(--muted);line-height:1.6}
 
 /* MOBILE */
 @media(max-width:768px){
   .shell{grid-template-columns:1fr}
-  .sidebar{position:fixed;left:-260px;z-index:100;transition:left 0.25s;height:100vh}
+  .sidebar{position:fixed;left:-268px;z-index:100;transition:left 0.25s;height:100vh}
   .sidebar.open{left:0}
   .content{padding:32px 20px 80px}
   .content-header{padding:14px 20px}
-  .level-grid{grid-template-columns:1fr}
+  .level-grid,.role-grid{grid-template-columns:1fr}
   .menu-btn{display:flex}
-}
-.menu-btn{
-  display:none;align-items:center;justify-content:center;
-  width:36px;height:36px;border:1.5px solid var(--border);
-  border-radius:8px;background:var(--white);cursor:pointer;
 }
 </style>
 </head>
 <body>
-
 <div class="shell">
 
-  <!-- ── SIDEBAR ── -->
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-top">
-      <a class="sidebar-wordmark" href="/">
-        dove<em>tell</em>
-      </a>
-      <div class="sidebar-wordmark-sub">docs · v0.1</div>
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-top">
+    <a class="sidebar-wordmark" href="/">dove<em>tell</em></a>
+    <div class="sidebar-wordmark-sub">docs · v0.1</div>
+  </div>
+  <nav class="sidebar-nav">
+
+    <div class="nav-group">
+      <span class="nav-group-label">Introduction</span>
+      <div class="nav-link active" onclick="show('overview')"><span class="nav-link-icon">🕊</span>What is dovetell?</div>
+      <div class="nav-link" onclick="show('why')"><span class="nav-link-icon">⚡</span>Why it exists</div>
+      <div class="nav-link" onclick="show('positioning')"><span class="nav-link-icon">📍</span>Where it fits</div>
+      <div class="nav-link" onclick="show('modes')"><span class="nav-link-icon">🔀</span>Who can use it</div>
     </div>
 
-    <nav class="sidebar-nav">
-      <div class="nav-group">
-        <span class="nav-group-label">Introduction</span>
-        <a class="nav-link active" href="#" onclick="show('overview');return false">
-          <span class="nav-link-icon">🕊</span> What is dovetell?
-        </a>
-        <a class="nav-link" href="#" onclick="show('why');return false">
-          <span class="nav-link-icon">⚡</span> Why it exists
-        </a>
-        <a class="nav-link" href="#" onclick="show('positioning');return false">
-          <span class="nav-link-icon">📍</span> Where it fits
-        </a>
-      </div>
-
-      <div class="nav-group">
-        <span class="nav-group-label">The Assessment</span>
-        <a class="nav-link" href="#" onclick="show('maturity');return false">
-          <span class="nav-link-icon">📊</span> Maturity model
-        </a>
-        <a class="nav-link" href="#" onclick="show('how-assessment');return false">
-          <span class="nav-link-icon">📋</span> How it works
-        </a>
-        <a class="nav-link" href="#" onclick="show('scoring');return false">
-          <span class="nav-link-icon">🔢</span> Scoring
-        </a>
-        <a class="nav-link" href="#" onclick="show('tracking');return false">
-          <span class="nav-link-icon">🔗</span> Tracking over time
-        </a>
-      </div>
-
-      <div class="nav-group">
-        <span class="nav-group-label">The Platform</span>
-        <a class="nav-link" href="#" onclick="show('platform');return false">
-          <span class="nav-link-icon">🚀</span> Phase 2 overview
-        </a>
-        <a class="nav-link" href="#" onclick="show('capabilities');return false">
-          <span class="nav-link-icon">🛠</span> Capabilities
-        </a>
-      </div>
-
-      <div class="nav-group">
-        <span class="nav-group-label">Reference</span>
-        <a class="nav-link" href="#" onclick="show('definitions');return false">
-          <span class="nav-link-icon">📖</span> Definitions
-        </a>
-        <a class="nav-link" href="#" onclick="show('decisions');return false">
-          <span class="nav-link-icon">📝</span> Decisions log
-        </a>
-        <a class="nav-link" href="#" onclick="show('privacy');return false">
-          <span class="nav-link-icon">🔒</span> Privacy
-        </a>
-      </div>
-    </nav>
-
-    <div class="sidebar-footer">
-      <a href="https://dovetell.io">dovetell.io</a> ·
-      <a href="https://github.com/dovetell-io/dovetell">GitHub</a><br>
-      v0.1 · May 2026
-    </div>
-  </aside>
-
-  <!-- ── MAIN ── -->
-  <div class="main">
-    <div class="content-header">
-      <div class="breadcrumb">
-        <button class="menu-btn" onclick="document.getElementById('sidebar').classList.toggle('open')">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
-        dovetell docs · <span id="breadcrumb-current">Introduction</span>
-      </div>
-      <div class="header-actions">
-        <a class="btn-site" href="https://dovetell.io/team-assessment">Take the assessment →</a>
-      </div>
+    <div class="nav-group">
+      <span class="nav-group-label">The Assessment</span>
+      <div class="nav-link" onclick="show('maturity')"><span class="nav-link-icon">📊</span>Maturity model</div>
+      <div class="nav-link" onclick="show('how-assessment')"><span class="nav-link-icon">📋</span>How it works</div>
+      <div class="nav-link" onclick="show('scoring')"><span class="nav-link-icon">🔢</span>Scoring</div>
+      <div class="nav-link" onclick="show('tracking')"><span class="nav-link-icon">🔗</span>Tracking over time</div>
     </div>
 
-    <div class="content">
+    <div class="nav-group">
+      <span class="nav-group-label">The Platform</span>
+      <div class="nav-link" onclick="show('platform')"><span class="nav-link-icon">🚀</span>Phase 2 overview</div>
+      <div class="nav-link" onclick="show('roles')"><span class="nav-link-icon">👥</span>Roles</div>
+      <div class="nav-link" onclick="show('review-workflow')"><span class="nav-link-icon">✅</span>Review workflow</div>
+      <div class="nav-link" onclick="show('capabilities')"><span class="nav-link-icon">🛠</span>Capabilities</div>
+    </div>
 
-      <!-- OVERVIEW -->
-      <div class="doc-section active" id="section-overview">
-        <div class="doc-eyebrow">Introduction</div>
-        <h1 class="doc-h1">What is <em>dovetell?</em></h1>
-        <p class="doc-lead">dovetell is a context orchestration layer for AI-assisted software teams. Its north star: <strong>"I want to be asked fewer questions."</strong></p>
+    <div class="nav-group">
+      <span class="nav-group-label">Reference</span>
+      <div class="nav-link" onclick="show('definitions')"><span class="nav-link-icon">📖</span>Definitions</div>
+      <div class="nav-link" onclick="show('decisions')"><span class="nav-link-icon">📝</span>Decisions log</div>
+      <div class="nav-link" onclick="show('privacy')"><span class="nav-link-icon">🔒</span>Privacy</div>
+    </div>
 
-        <p>When teams use AI tools to build fast, context gets lost. Decisions made in chat threads, assumptions in someone's head, documentation that goes stale the moment work begins — all of it accumulates as context debt. dovetell exists to stop that accumulation.</p>
+  </nav>
+  <div class="sidebar-footer">
+    <a href="https://dovetell.io">dovetell.io</a> ·
+    <a href="https://github.com/dovetell-io/dovetell">GitHub</a><br>
+    v0.1 · May 2026
+  </div>
+</aside>
 
-        <div class="callout">
-          <p><strong>One sentence:</strong> dovetell captures decisions, aligns intent, and keeps everyone from asking the same questions twice.</p>
-        </div>
+<!-- MAIN -->
+<div class="main">
+  <div class="content-header">
+    <div class="breadcrumb">
+      <button class="menu-btn" onclick="document.getElementById('sidebar').classList.toggle('open')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      dovetell docs · <span id="breadcrumb-current">Introduction</span>
+    </div>
+    <a class="btn-site" href="https://dovetell.io/team-assessment">Take the assessment →</a>
+  </div>
 
-        <h2>What dovetell is not</h2>
-        <ul>
-          <li>Not a documentation tool — those require humans to maintain them</li>
-          <li>Not a project management tool — no tasks, sprints, or deadlines</li>
-          <li>Not an LLM wrapper or chatbot</li>
-          <li>Not a code review tool</li>
-        </ul>
+  <div class="content">
 
-        <h2>Three pillars</h2>
-        <p>The name contains the product concept:</p>
-        <ul>
-          <li><strong>Capture</strong> (dove — the messenger carries it) — decisions and domain knowledge recorded as work happens</li>
-          <li><strong>Align</strong> (dovetail — the joint locks it in place) — context stays synchronized across code, docs, and team</li>
-          <li><strong>Tell</strong> (broadcast — it travels) — the right context reaches the right person at the right moment</li>
-        </ul>
+    <!-- ══════════════════════════════════════
+         OVERVIEW
+    ══════════════════════════════════════ -->
+    <div class="doc-section active" id="section-overview">
+      <div class="doc-eyebrow">Introduction</div>
+      <h1 class="doc-h1">What is <em>dovetell?</em></h1>
+      <p class="doc-lead">dovetell is a context orchestration layer for AI-assisted software teams. Its north star: <strong>"I want to be asked fewer questions."</strong></p>
 
-        <h2>Current state</h2>
-        <table>
-          <tr><th>Phase</th><th>What</th><th>Status</th></tr>
-          <tr><td>Phase 1</td><td>Team AI Maturity Assessment + Prompt Library</td><td>Live</td></tr>
-          <tr><td>Phase 2</td><td>SaaS platform — context base, unvetted queue, MCP</td><td>Planned</td></tr>
-          <tr><td>Phase 3</td><td>Queryable decision traces at scale</td><td>Future</td></tr>
-        </table>
+      <p>When teams use AI tools to build fast, context gets lost. Decisions made in chat threads, assumptions in someone's head, documentation that goes stale the moment work begins — all of it accumulates as context debt. dovetell exists to stop that accumulation.</p>
+
+      <div class="callout">
+        <p><strong>One sentence:</strong> dovetell captures decisions, aligns intent, and keeps everyone from asking the same questions twice.</p>
       </div>
 
-      <!-- WHY -->
-      <div class="doc-section" id="section-why">
-        <div class="doc-eyebrow">Introduction</div>
-        <h1 class="doc-h1">Why it <em>exists</em></h1>
-        <p class="doc-lead">Three failure modes that get worse as AI-assisted development accelerates.</p>
+      <h2>What dovetell is not</h2>
+      <ul>
+        <li>Not a documentation tool — those require humans to maintain them</li>
+        <li>Not a project management tool — no sprints, no deadlines</li>
+        <li>Not an LLM wrapper or chatbot</li>
+        <li>Not a code review tool</li>
+        <li>Not an AI-only product — it works without AI too</li>
+      </ul>
 
-        <h2>01 — Tribal knowledge failure</h2>
-        <p>Domain context lives in one person's head and never gets captured. When that person is heads-down or unavailable, the team stalls. Developers ask the same domain questions every sprint. The PM becomes a human search engine.</p>
+      <h2>Three pillars</h2>
+      <ul>
+        <li><strong>Capture</strong> — decisions and domain knowledge recorded as work happens</li>
+        <li><strong>Align</strong> — context stays synchronized across code, docs, and team</li>
+        <li><strong>Tell</strong> — the right context reaches the right person at the right moment</li>
+      </ul>
 
-        <h2>02 — Documentation drift</h2>
-        <p>Governing docs are written once and go stale the moment work begins. Nobody trusts them, so nobody reads them. The gap between what the docs say and what the code does grows every sprint.</p>
+      <h2>Current state</h2>
+      <table>
+        <tr><th>Phase</th><th>What</th><th>Status</th></tr>
+        <tr><td>Phase 1</td><td>Team AI Maturity Assessment + Prompt Library</td><td>Live</td></tr>
+        <tr><td>Phase 2 v1</td><td>SaaS platform — context base, queue, MCP, shareable links</td><td>Planned</td></tr>
+        <tr><td>Phase 2 v2</td><td>Regulated industry governance — sequential approval, audit trail</td><td>Planned</td></tr>
+        <tr><td>Phase 3</td><td>Queryable decision traces at scale, context graph</td><td>Future</td></tr>
+      </table>
 
-        <h2>03 — Bi-directional blindness</h2>
-        <p>Code evolves without informing docs. Docs change without reaching developers. The two never meet. As AI-assisted development accelerates, this gap widens faster than any team can manually close it.</p>
+      <div class="callout-green callout">
+        <p><strong>The architectural principle:</strong> dovetell is a renderer, not an owner. Context lives in your repo. We just make it usable.</p>
+      </div>
+    </div>
 
-        <div class="callout-warn callout">
-          <p>The rise of vibe coding makes this acute. The more AI assists in building, the more critical it becomes to maintain a clean, authoritative, living context layer — or outputs drift from intent.</p>
-        </div>
+    <!-- ══════════════════════════════════════
+         WHY
+    ══════════════════════════════════════ -->
+    <div class="doc-section" id="section-why">
+      <div class="doc-eyebrow">Introduction</div>
+      <h1 class="doc-h1">Why it <em>exists</em></h1>
+      <p class="doc-lead">Three failure modes that get worse as AI-assisted development accelerates.</p>
+
+      <h2>01 — Tribal knowledge failure</h2>
+      <p>Domain context lives in one person's head and never gets captured. When that person is heads-down or unavailable, the team stalls. Developers ask the same domain questions every sprint. The PM becomes a human search engine.</p>
+
+      <h2>02 — Documentation drift</h2>
+      <p>Governing docs are written once and go stale the moment work begins. Nobody trusts them, so nobody reads them. The gap between what the docs say and what the code does grows every sprint.</p>
+
+      <h2>03 — Bi-directional blindness</h2>
+      <p>Code evolves without informing docs. Docs change without reaching developers. The two never meet. As AI-assisted development accelerates, this gap widens faster than any team can manually close it.</p>
+
+      <div class="callout-warn callout">
+        <p>The more AI assists in building, the more critical it becomes to maintain a clean, authoritative, living context layer — or outputs drift from intent faster than the team can catch them.</p>
       </div>
 
-      <!-- POSITIONING -->
-      <div class="doc-section" id="section-positioning">
-        <div class="doc-eyebrow">Introduction</div>
-        <h1 class="doc-h1">Where dovetell <em>fits</em></h1>
-        <p class="doc-lead">dovetell is the context injection layer in your agent harness. If you're not the model, you're the harness.</p>
+      <h2>Why now</h2>
+      <p>Teams are using Cursor, Claude Code, and GitHub Copilot to ship faster than ever. The tools handle execution. Nobody has solved what those tools need to know about the team to execute correctly. That's the gap dovetell fills.</p>
+    </div>
 
-        <h2>The agent stack</h2>
-        <pre><code>Model          Claude / GPT-4o / Gemini / Local
-────────────────────────────────────
+    <!-- ══════════════════════════════════════
+         POSITIONING
+    ══════════════════════════════════════ -->
+    <div class="doc-section" id="section-positioning">
+      <div class="doc-eyebrow">Introduction</div>
+      <h1 class="doc-h1">Where dovetell <em>fits</em></h1>
+      <p class="doc-lead">dovetell is the context injection layer in your agent harness. If you're not the model, you're the harness.</p>
+
+      <h2>The agent stack</h2>
+      <pre><code>Model          Claude / GPT-4o / Gemini / Local
+────────────────────────────────────────────
 Agent Harness
-  Tools        Cursor / Claude Code / Copilot
-  dovetell  ←  context injection layer  ★
-  Memory       filesystem / AGENTS.md / git
-────────────────────────────────────
-Your Codebase</code></pre>
+  Execution    Cursor / Claude Code / Cowork Dispatch
+  dovetell  ←  context layer  ★
+  Memory       filesystem / AGENTS.md / CLAUDE.md / git
+────────────────────────────────────────────
+Your Codebase  ←  .dovetell-context/ lives here</code></pre>
 
-        <p>Harness-as-a-Service platforms (Cursor SDK, Claude Code, GitHub Copilot) give you three things: which model, which tools, which task. They don't give you domain context — what your team's definitions are, which decisions were made, what the architecture constraints are. That's dovetell's job.</p>
+      <p>Agent execution platforms give you three things: which model, which tools, which task. They don't give you domain context — what your team's definitions are, which decisions were made, what the architecture constraints are. That's dovetell's job.</p>
 
-        <div class="callout">
-          <p><strong>One liner:</strong> Cursor handles the runtime. dovetell handles what the runtime needs to know about your team.</p>
-        </div>
-
-        <h2>Three phases of agent development</h2>
-        <ul>
-          <li><strong>Phase 1 — Weights:</strong> bigger models, more data, fine-tuning</li>
-          <li><strong>Phase 2 — Context:</strong> prompt engineering, RAG — <em>dovetell starts here</em></li>
-          <li><strong>Phase 3 — Harness:</strong> what environment should the model operate in — <em>dovetell ends here</em></li>
-        </ul>
+      <div class="callout">
+        <p><strong>The one-liner:</strong> Cursor handles the runtime. dovetell handles what the runtime needs to know about your team.</p>
       </div>
 
-      <!-- MATURITY MODEL -->
-      <div class="doc-section" id="section-maturity">
-        <div class="doc-eyebrow">The Assessment</div>
-        <h1 class="doc-h1">Team AI <em>Maturity Model</em></h1>
-        <p class="doc-lead">Four levels describing how systematically a team uses AI. Every team is somewhere on this curve. dovetell helps you move up it.</p>
+      <h2>Why not just use Cursor / Claude Code / Cowork Dispatch?</h2>
+      <p>These tools know how to execute. They don't know what your team decided last sprint, what your data retention policy is, or what "service boundary" means in your codebase. dovetell is the context layer those tools are missing.</p>
+      <p>See <a href="https://dovetell.io/why">dovetell.io/why</a> for the full composability argument — one pattern card per tool.</p>
 
-        <div class="level-grid">
-          <div class="level-card">
-            <div class="level-badge badge-scattered">Scattered</div>
-            <div class="level-range">0 – 22 / 90</div>
-            <div class="level-name">Ad hoc</div>
-            <div class="level-desc">AI use is isolated. Context lives in individual chats. No shared standards or reuse.</div>
-          </div>
-          <div class="level-card">
-            <div class="level-badge badge-structured">Structured</div>
-            <div class="level-range">23 – 54 / 90</div>
-            <div class="level-name">Repeatable</div>
-            <div class="level-desc">Some repeatable practices but inconsistent. Context is scattered, handoffs vary.</div>
-          </div>
-          <div class="level-card">
-            <div class="level-badge badge-coordinated">Coordinated</div>
-            <div class="level-range">55 – 72 / 90</div>
-            <div class="level-name">Aligned</div>
-            <div class="level-desc">Shared context and standard prompts. Team works together with AI effectively.</div>
-          </div>
-          <div class="level-card">
-            <div class="level-badge badge-compounding">Compounding</div>
-            <div class="level-range">73 – 90 / 90</div>
-            <div class="level-name">Systematic</div>
-            <div class="level-desc">AI context compounds over time. Every decision becomes searchable precedent.</div>
-          </div>
-        </div>
+      <h2>Three phases of agent development</h2>
+      <ul>
+        <li><strong>Phase 1 — Weights:</strong> bigger models, more data, fine-tuning</li>
+        <li><strong>Phase 2 — Context:</strong> prompt engineering, RAG — <em>dovetell starts here</em></li>
+        <li><strong>Phase 3 — Harness:</strong> what environment should the model operate in — <em>dovetell ends here</em></li>
+      </ul>
 
-        <h2>Six capability areas</h2>
-        <p>Teams are scored across six dimensions, 5 questions each, 0–3 points per question. Max 90 points.</p>
-        <table>
-          <tr><th>#</th><th>Area</th><th>What it measures</th></tr>
-          <tr><td>1</td><td>Shared Context</td><td>Does team-wide context exist and is it discoverable?</td></tr>
-          <tr><td>2</td><td>Prompt Reuse</td><td>Are high-value prompts captured and shared?</td></tr>
-          <tr><td>3</td><td>Team Handoffs</td><td>Is there a standard handoff format with clear ownership?</td></tr>
-          <tr><td>4</td><td>Knowledge Capture</td><td>Are insights and decisions captured systematically?</td></tr>
-          <tr><td>5</td><td>Review & Governance</td><td>Is there a review process for AI outputs?</td></tr>
-          <tr><td>6</td><td>Workflow Integration</td><td>Is AI integrated consistently across the team?</td></tr>
-        </table>
+      <h2>The repo as source of truth</h2>
+      <p>Context lives in <code>.dovetell-context/</code> in the team's git repository. dovetell reads, renders, and writes back via a scoped token. No markdown content is ever stored in dovetell's database. The team owns the data. Always.</p>
+
+      <div class="callout-green callout">
+        <p><strong>Token scope shown at onboarding:</strong> ✓ .dovetell-context/ read/write &nbsp;·&nbsp; ✗ Source code &nbsp;·&nbsp; ✗ Issues / PRs &nbsp;·&nbsp; ✗ All other folders</p>
       </div>
+    </div>
 
-      <!-- HOW ASSESSMENT WORKS -->
-      <div class="doc-section" id="section-how-assessment">
-        <div class="doc-eyebrow">The Assessment</div>
-        <h1 class="doc-h1">How it <em>works</em></h1>
-        <p class="doc-lead">5 minutes. 30 questions. Personalized score, gaps, and next steps. A unique link to track your team's progress over time.</p>
+    <!-- ══════════════════════════════════════
+         MODES — WHO CAN USE IT
+    ══════════════════════════════════════ -->
+    <div class="doc-section" id="section-modes">
+      <div class="doc-eyebrow">Introduction</div>
+      <h1 class="doc-h1">Who can <em>use it</em></h1>
+      <p class="doc-lead">dovetell is designed for AI-assisted teams but is not dependent on AI. Three modes, one product. Any team using git can benefit.</p>
 
-        <div class="flow">
-          <div class="flow-step">
-            <div class="flow-num">1</div>
-            <div class="flow-body">
-              <div class="flow-title">Take the assessment</div>
-              <div class="flow-desc">Answer 30 questions across 6 capability areas. Score each 0–3 (Not true → Very true). Skip anything that doesn't apply — skips score 0.</div>
-            </div>
-          </div>
-          <div class="flow-step">
-            <div class="flow-num">2</div>
-            <div class="flow-body">
-              <div class="flow-title">Enter your email</div>
-              <div class="flow-desc">Required. Optional: project name, role, team size, company, industry, primary AI tool, how you found us. No account required.</div>
-            </div>
-          </div>
-          <div class="flow-step">
-            <div class="flow-num">3</div>
-            <div class="flow-body">
-              <div class="flow-title">Get your results</div>
-              <div class="flow-desc">Your maturity level, score out of 90, breakdown by capability area, your strengths, your biggest gaps, and 3 recommended next steps.</div>
-            </div>
-          </div>
-          <div class="flow-step">
-            <div class="flow-num">4</div>
-            <div class="flow-body">
-              <div class="flow-title">Get your unique link</div>
-              <div class="flow-desc">A permanent URL for your project. Bookmark it. Share it. Return to retake and track how your team matures over time.</div>
-            </div>
-          </div>
-          <div class="flow-step">
-            <div class="flow-num">5</div>
-            <div class="flow-body">
-              <div class="flow-title">See your recommendations</div>
-              <div class="flow-desc">Personalized resources based on your level — free checklist, Starter Kit ($49), Pro Kit ($99), or a Setup Review session ($299).</div>
-            </div>
+      <div class="mode-grid">
+        <div class="mode-card">
+          <div class="mode-icon">⚡</div>
+          <div>
+            <div class="mode-label">Mode 1 — Agentic</div>
+            <div class="mode-title">AI-native teams</div>
+            <div class="mode-desc">Developer types <code>@dovetell what is our data retention policy?</code> inside Cursor or Claude Code. Gets the vetted answer with source and decision trace. Context assembled at query time via MCP server. This is the north star use case.</div>
           </div>
         </div>
-
-        <div class="callout">
-          <p><strong>Take the assessment:</strong> <a href="https://dovetell.io/team-assessment">dovetell.io/team-assessment</a></p>
+        <div class="mode-card">
+          <div class="mode-icon">💬</div>
+          <div>
+            <div class="mode-label">Mode 2 — AI-assisted</div>
+            <div class="mode-title">LLM-using teams</div>
+            <div class="mode-desc">Team uses Claude, ChatGPT, or any LLM but not in an agentic coding flow. They paste context from <code>.dovetell-context/</code> into chat sessions. dovetell structures what they paste and keeps it vetted and current. The prompt library is the product for this tier.</div>
+          </div>
+        </div>
+        <div class="mode-card">
+          <div class="mode-icon">🗂</div>
+          <div>
+            <div class="mode-label">Mode 3 — Git-native</div>
+            <div class="mode-title">Any team using git</div>
+            <div class="mode-desc">Team uses git but minimal or no AI tooling. dovetell still works. The review workflow is a review workflow. The diff view is just a diff. The queue is a lightweight approval process. The vet history is an audit trail. No AI required at any point.</div>
+          </div>
         </div>
       </div>
 
-      <!-- SCORING -->
-      <div class="doc-section" id="section-scoring">
-        <div class="doc-eyebrow">The Assessment</div>
-        <h1 class="doc-h1"><em>Scoring</em></h1>
-        <p class="doc-lead">How points are calculated and how levels are assigned.</p>
+      <div class="callout-green callout">
+        <p><strong>The git-native floor:</strong> ~100M developers use git. The product works for all of them without modification. AI is optional acceleration, not a dependency.</p>
+      </div>
 
-        <h2>The math</h2>
-        <pre><code>6 sections
+      <h2>Why AI independence matters</h2>
+      <p>For regulated industry buyers — healthcare, finance, defense — "we don't call AI models on your behalf" is a trust statement, not a limitation. Inference is local (Ollama) or BYOK. Your context never leaves your repo. dovetell is a structured markdown governance layer with a clean UI. The AI layer sits on top, optionally.</p>
+
+      <h2>The positioning in one sentence</h2>
+      <p>Don't position dovetell as an AI tool. Position it as a <strong>context governance layer that happens to make AI dramatically more useful</strong>. The AI story is the ceiling. The git story is the floor. The floor is much larger.</p>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         MATURITY MODEL
+    ══════════════════════════════════════ -->
+    <div class="doc-section" id="section-maturity">
+      <div class="doc-eyebrow">The Assessment</div>
+      <h1 class="doc-h1">Team AI <em>Maturity Model</em></h1>
+      <p class="doc-lead">Four levels describing how systematically a team uses AI. Every team is somewhere on this curve. dovetell helps you move up it.</p>
+
+      <div class="level-grid">
+        <div class="level-card">
+          <div class="level-badge badge-scattered">Scattered</div>
+          <div class="level-range">0 – 22 / 90</div>
+          <div class="level-name">Ad hoc</div>
+          <div class="level-desc">AI use is isolated. Context lives in individual chats. No shared standards or reuse across the team.</div>
+        </div>
+        <div class="level-card">
+          <div class="level-badge badge-structured">Structured</div>
+          <div class="level-range">23 – 54 / 90</div>
+          <div class="level-name">Repeatable</div>
+          <div class="level-desc">Some repeatable practices but inconsistent. Context is scattered, handoffs vary by person.</div>
+        </div>
+        <div class="level-card">
+          <div class="level-badge badge-coordinated">Coordinated</div>
+          <div class="level-range">55 – 72 / 90</div>
+          <div class="level-name">Aligned</div>
+          <div class="level-desc">Shared context and standard prompts. The team works together with AI effectively and consistently.</div>
+        </div>
+        <div class="level-card">
+          <div class="level-badge badge-compounding">Compounding</div>
+          <div class="level-range">73 – 90 / 90</div>
+          <div class="level-name">Systematic</div>
+          <div class="level-desc">AI context compounds over time. Every decision becomes searchable precedent. The system improves itself.</div>
+        </div>
+      </div>
+
+      <h2>Six capability areas</h2>
+      <p>Teams are scored across six dimensions, 5 questions each, 0–3 points per question. Maximum 90 points total.</p>
+      <table>
+        <tr><th>#</th><th>Area</th><th>What it measures</th></tr>
+        <tr><td>1</td><td>Shared Context</td><td>Does team-wide context exist and is it discoverable?</td></tr>
+        <tr><td>2</td><td>Prompt Reuse</td><td>Are high-value prompts captured and shared?</td></tr>
+        <tr><td>3</td><td>Team Handoffs</td><td>Is there a standard handoff format with clear ownership?</td></tr>
+        <tr><td>4</td><td>Knowledge Capture</td><td>Are insights and decisions captured systematically?</td></tr>
+        <tr><td>5</td><td>Review &amp; Governance</td><td>Is there a review process for AI outputs and decisions?</td></tr>
+        <tr><td>6</td><td>Workflow Integration</td><td>Is AI integrated consistently across the whole team?</td></tr>
+      </table>
+
+      <div class="callout-warn callout">
+        <p>Thresholds will be recalibrated after the first 50 non-founder completions using real score distribution data.</p>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         HOW ASSESSMENT WORKS
+    ══════════════════════════════════════ -->
+    <div class="doc-section" id="section-how-assessment">
+      <div class="doc-eyebrow">The Assessment</div>
+      <h1 class="doc-h1">How it <em>works</em></h1>
+      <p class="doc-lead">5 minutes. 30 questions. Personalized score, gaps, and next steps. A unique link to track your team's progress over time.</p>
+
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-body">
+            <div class="flow-title">Take the assessment</div>
+            <div class="flow-desc">Answer 30 questions across 6 capability areas. Score each 0–3 (Not true → Very true). Skip anything that doesn't apply — skips score 0.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-body">
+            <div class="flow-title">Enter your email</div>
+            <div class="flow-desc">Required to receive your results and unique link. Optional: project name, role, team size, company, industry, primary AI tool.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-body">
+            <div class="flow-title">Get your results</div>
+            <div class="flow-desc">Your maturity level, score out of 90, breakdown by capability area, strengths, biggest gaps, and 3 recommended next steps.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-body">
+            <div class="flow-title">Get your unique link</div>
+            <div class="flow-desc">A permanent URL for your project. Bookmark it. Return to retake and track how your team matures over time.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">5</div>
+          <div class="flow-body">
+            <div class="flow-title">See your recommendations</div>
+            <div class="flow-desc">Personalized resources based on your level — free checklist, Starter Kit ($49), Pro Kit ($99), or a Setup Review session ($299).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p><strong>Take the assessment:</strong> <a href="https://dovetell.io/team-assessment">dovetell.io/team-assessment</a></p>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         SCORING
+    ══════════════════════════════════════ -->
+    <div class="doc-section" id="section-scoring">
+      <div class="doc-eyebrow">The Assessment</div>
+      <h1 class="doc-h1"><em>Scoring</em></h1>
+      <p class="doc-lead">How points are calculated and how levels are assigned.</p>
+
+      <h2>The math</h2>
+      <pre><code>6 sections
 × 5 questions per section
 × max 3 points per question
 = 90 points maximum
 
 Unanswered questions → 0 points
-Skipped sections → 0 points for that section</code></pre>
+Skipped sections     → 0 points for that section</code></pre>
 
-        <h2>Level thresholds</h2>
-        <table>
-          <tr><th>Level</th><th>Score</th><th>% of max</th></tr>
-          <tr><td>Scattered</td><td>0 – 22</td><td>0 – 24%</td></tr>
-          <tr><td>Structured</td><td>23 – 54</td><td>26 – 60%</td></tr>
-          <tr><td>Coordinated</td><td>55 – 72</td><td>61 – 80%</td></tr>
-          <tr><td>Compounding</td><td>73 – 90</td><td>81 – 100%</td></tr>
-        </table>
+      <h2>Level thresholds</h2>
+      <table>
+        <tr><th>Level</th><th>Score</th><th>% of max</th></tr>
+        <tr><td>Scattered</td><td>0 – 22</td><td>0 – 24%</td></tr>
+        <tr><td>Structured</td><td>23 – 54</td><td>26 – 60%</td></tr>
+        <tr><td>Coordinated</td><td>55 – 72</td><td>61 – 80%</td></tr>
+        <tr><td>Compounding</td><td>73 – 90</td><td>81 – 100%</td></tr>
+      </table>
 
-        <div class="callout-warn callout">
-          <p>Thresholds are estimates. They will be recalibrated after the first 50 non-founder assessment completions using real score distribution data.</p>
+      <h2>Answer scale</h2>
+      <table>
+        <tr><th>Score</th><th>Label</th></tr>
+        <tr><td><code>0</code></td><td>Not true</td></tr>
+        <tr><td><code>1</code></td><td>Somewhat true</td></tr>
+        <tr><td><code>2</code></td><td>Mostly true</td></tr>
+        <tr><td><code>3</code></td><td>Very true</td></tr>
+      </table>
+
+      <div class="callout-warn callout">
+        <p>Thresholds are current estimates, not final. They will be recalibrated after 50+ real (non-founder) completions.</p>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         TRACKING
+    ══════════════════════════════════════ -->
+    <div class="doc-section" id="section-tracking">
+      <div class="doc-eyebrow">The Assessment</div>
+      <h1 class="doc-h1">Tracking <em>over time</em></h1>
+      <p class="doc-lead">Your unique link is your project's permanent home. Retake whenever your team's practices change and watch the trajectory.</p>
+
+      <h2>How the ID system works</h2>
+      <div class="id-grid">
+        <div class="id-row">
+          <div class="id-key">uid</div>
+          <div class="id-val"><strong>userId.</strong> Permanent per browser. Generated once, stored locally. Ties all your projects together without requiring an account.</div>
         </div>
-
-        <h2>Answer scale</h2>
-        <table>
-          <tr><th>Score</th><th>Label</th></tr>
-          <tr><td><code>0</code></td><td>Not true</td></tr>
-          <tr><td><code>1</code></td><td>Somewhat true</td></tr>
-          <tr><td><code>2</code></td><td>Mostly true</td></tr>
-          <tr><td><code>3</code></td><td>Very true</td></tr>
-        </table>
+        <div class="id-row">
+          <div class="id-key">pid</div>
+          <div class="id-val"><strong>projectId.</strong> One per team or initiative. Lives in your unique URL. Persists across every retake.</div>
+        </div>
+        <div class="id-row">
+          <div class="id-key">aid</div>
+          <div class="id-val"><strong>assessmentId.</strong> Generated fresh every submission. Tracks each individual run within a project.</div>
+        </div>
+        <div class="id-row">
+          <div class="id-key">vid</div>
+          <div class="id-val"><strong>versionId.</strong> Which question set was used. Currently <code>v01</code>. Bumped when questions change — historical scores stay anchored to their version.</div>
+        </div>
       </div>
 
-      <!-- TRACKING -->
-      <div class="doc-section" id="section-tracking">
-        <div class="doc-eyebrow">The Assessment</div>
-        <h1 class="doc-h1">Tracking <em>over time</em></h1>
-        <p class="doc-lead">Your unique link is your project's permanent home. Retake whenever your team's practices change and watch the trajectory.</p>
-
-        <h2>How the ID system works</h2>
-        <div class="id-grid">
-          <div class="id-row">
-            <div class="id-key">uid</div>
-            <div class="id-val"><strong>userId.</strong> Permanent per browser. Generated once, stored locally. Ties all your projects together.</div>
-          </div>
-          <div class="id-row">
-            <div class="id-key">pid</div>
-            <div class="id-val"><strong>projectId.</strong> One per team or initiative. Lives in your unique URL. Persists across every retake.</div>
-          </div>
-          <div class="id-row">
-            <div class="id-key">aid</div>
-            <div class="id-val"><strong>assessmentId.</strong> Generated fresh every submission. Tracks each individual run within a project.</div>
-          </div>
-          <div class="id-row">
-            <div class="id-key">vid</div>
-            <div class="id-val"><strong>versionId.</strong> Which question set was used. Currently <code>v01</code>. Bumped when questions change.</div>
-          </div>
-        </div>
-
-        <h2>Hierarchy</h2>
-        <pre><code>email
+      <h2>Hierarchy</h2>
+      <pre><code>email
 └── uid  (you, across all projects)
     ├── pid-a  (Ops Analytics Team)
     │   ├── aid-1  Jan 2026 · v01 · 14/90 · Scattered
@@ -567,209 +552,379 @@ Skipped sections → 0 points for that section</code></pre>
     └── pid-b  (Data Infrastructure Squad)
         └── aid-1  Mar 2026 · v01 · 21/90 · Scattered</code></pre>
 
-        <h2>Your unique link</h2>
-        <p>After completing the assessment you receive a link like:</p>
-        <pre><code>dovetell.io/assessments/?pid=8f3c2a1b</code></pre>
-        <p>Bookmark it. When you return, you'll see your last score and a retake button. Each retake generates a new <code>aid</code> while keeping the same <code>pid</code> — your project's growth trajectory builds automatically.</p>
+      <h2>Your unique link</h2>
+      <pre><code>dovetell.io/assessments/?pid=8f3c2a1b</code></pre>
+      <p>Bookmark it. When you return you'll see your last score and a retake button. Each retake generates a new <code>aid</code> while keeping the same <code>pid</code> — your project's growth trajectory builds automatically.</p>
 
-        <div class="callout">
-          <p><strong>Starting a new project?</strong> Just go to <a href="https://dovetell.io/team-assessment">dovetell.io/team-assessment</a> without your existing link. A new pid is generated and you have a separate tracking thread.</p>
+      <div class="callout">
+        <p><strong>Starting a new project?</strong> Go to <a href="https://dovetell.io/team-assessment">dovetell.io/team-assessment</a> without your existing link. A new pid is generated and you have a separate tracking thread.</p>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         PLATFORM OVERVIEW
+    ══════════════════════════════════════ -->
+    <div class="doc-section" id="section-platform">
+      <div class="doc-eyebrow">The Platform</div>
+      <h1 class="doc-h1">Phase 2 <em>overview</em></h1>
+      <p class="doc-lead">The dovetell platform is coming. The prompt library and assessment are Phase 1 — validation that the problem is real and people will pay to solve it.</p>
+
+      <p>Phase 2 is the SaaS platform that makes context management automatic — a living, queryable context layer your team doesn't have to maintain manually.</p>
+
+      <h2>The core loop</h2>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-body">
+            <div class="flow-title">Connect your repo</div>
+            <div class="flow-desc">Link your GitHub or GitLab repo. dovetell requests a scoped token — read/write to <code>.dovetell-context/</code> only. Source code, issues, and all other folders are out of reach.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-body">
+            <div class="flow-title">Seed your context base</div>
+            <div class="flow-desc">Answer four prompts — one decision, one assumption, one definition, one policy your team has made. dovetell writes these to <code>.dovetell-context/</code>. First value in minutes.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-body">
+            <div class="flow-title">Import existing docs</div>
+            <div class="flow-desc">Drop in markdown files, Notion exports, or existing documentation. dovetell extracts decisions, assumptions, and definitions. Everything starts unvetted — nothing becomes truth without a human review.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-body">
+            <div class="flow-title">Review and vet</div>
+            <div class="flow-desc">The PM or team lead reviews items in the queue. Accept, edit, reject, or defer. Accepted items become vetted truth — sourced, timestamped, queryable.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">5</div>
+          <div class="flow-body">
+            <div class="flow-title">Query from anywhere</div>
+            <div class="flow-desc"><code>@dovetell</code> in Cursor or Claude Code returns the team's vetted answer with source and decision trace. "I want to be asked fewer questions" made literal.</div>
+          </div>
         </div>
       </div>
 
-      <!-- PLATFORM -->
-      <div class="doc-section" id="section-platform">
-        <div class="doc-eyebrow">The Platform</div>
-        <h1 class="doc-h1">Phase 2 <em>overview</em></h1>
-        <p class="doc-lead">The dovetell platform is coming. The prompt library and assessment are Phase 1 — validation that the problem is real and people will pay to solve it.</p>
+      <div class="callout">
+        <p><strong>Join the waitlist:</strong> <a href="https://dovetell.io/#waitlist">dovetell.io/#waitlist</a></p>
+      </div>
+    </div>
 
-        <p>Phase 2 is the SaaS platform that makes the prompt library automatic — a living, queryable context layer that your team doesn't have to maintain manually.</p>
+    <!-- ══════════════════════════════════════
+         ROLES
+    ══════════════════════════════════════ -->
+    <div class="doc-section" id="section-roles">
+      <div class="doc-eyebrow">The Platform</div>
+      <h1 class="doc-h1"><em>Roles</em></h1>
+      <p class="doc-lead">Four roles. No custom roles. No inheritance. Each maps to accountability, not org chart position.</p>
 
-        <h2>The unvetted → reviewed → becomes truth loop</h2>
-        <p>Everything the platform captures starts as <strong>unvetted</strong>. A PM reviews, accepts, edits, or rejects. Accepted items become <strong>vetted</strong> — authoritative, queryable, and surfaced to the team automatically.</p>
-
-        <p>No automation without human review. The human in the loop is a feature, not a limitation.</p>
-
-        <div class="callout">
-          <p><strong>Join the waitlist:</strong> <a href="https://dovetell.io/#waitlist">dovetell.io/#waitlist</a></p>
+      <div class="role-grid">
+        <div class="role-card">
+          <div class="role-name">Owner</div>
+          <div class="role-who">PM, team lead — accountable for context quality</div>
+          <div class="role-perms">
+            <span class="perm perm-yes">✓ Vet</span>
+            <span class="perm perm-yes">✓ Accept</span>
+            <span class="perm perm-yes">✓ Add</span>
+            <span class="perm perm-yes">✓ View</span>
+            <span class="perm perm-yes">✓ Manage team</span>
+          </div>
+        </div>
+        <div class="role-card">
+          <div class="role-name">Approver</div>
+          <div class="role-who">Senior engineer, tech lead, domain SME</div>
+          <div class="role-perms">
+            <span class="perm perm-yes">✓ Vet</span>
+            <span class="perm perm-yes">✓ Accept</span>
+            <span class="perm perm-yes">✓ Add</span>
+            <span class="perm perm-yes">✓ View</span>
+            <span class="perm perm-no">— Manage team</span>
+          </div>
+        </div>
+        <div class="role-card">
+          <div class="role-name">Contributor</div>
+          <div class="role-who">Developer, analyst — generates context</div>
+          <div class="role-perms">
+            <span class="perm perm-no">— Vet</span>
+            <span class="perm perm-no">— Accept</span>
+            <span class="perm perm-yes">✓ Add</span>
+            <span class="perm perm-yes">✓ View</span>
+            <span class="perm perm-no">— Manage team</span>
+          </div>
+        </div>
+        <div class="role-card">
+          <div class="role-name">Viewer</div>
+          <div class="role-who">Stakeholder, ops lead, non-technical teammate</div>
+          <div class="role-perms">
+            <span class="perm perm-no">— Vet</span>
+            <span class="perm perm-no">— Accept</span>
+            <span class="perm perm-no">— Add</span>
+            <span class="perm perm-yes">✓ View</span>
+            <span class="perm perm-no">— Manage team</span>
+          </div>
         </div>
       </div>
 
-      <!-- CAPABILITIES -->
-      <div class="doc-section" id="section-capabilities">
-        <div class="doc-eyebrow">The Platform</div>
-        <h1 class="doc-h1"><em>Capabilities</em></h1>
-        <p class="doc-lead">Four capabilities, built in dependency order. The queue is the connective tissue — nothing becomes truth without it.</p>
+      <h2>Design intent</h2>
+      <p><strong>Owner</strong> — one per project. This is the buyer persona. The person accountable for what the AI knows about the team.</p>
+      <p><strong>Approver</strong> — the human in the review loop. Multiple per project, typically one per domain (architecture, data, policy). Makes context truth by accepting it.</p>
+      <p><strong>Contributor</strong> — doesn't need to understand dovetell to participate. A developer imports a doc, it lands in the queue. The Contributor's job is to generate context, not govern it.</p>
+      <p><strong>Viewer</strong> — the non-technical unlock. Sees the context base in plain English. No markdown visible. Can query, read, and monitor drift score. The same context that feeds a developer's <code>@dovetell</code> query renders for a PM, ops lead, or legal reviewer in plain language.</p>
 
-        <h2>1 — Context Console</h2>
-        <p>The dashboard. A context health monitor, not a document editor. The PM opens it at standup — sees the drift score, unvetted count, stale definitions, decisions captured this sprint. Red/Yellow/Green in under 30 seconds.</p>
+      <div class="callout">
+        <p><strong>Why no custom roles:</strong> Custom roles create permission sprawl — the Teams/SharePoint failure mode. Four fixed roles maps to four types of accountability. If someone needs a new capability, you promote them. Simple is the feature.</p>
+      </div>
+    </div>
 
-        <h2>2 — Context Query (MCP)</h2>
-        <p>dovetell as an MCP server. A developer types <code>@dovetell what's our defect rate threshold</code> inside Cursor or Claude Code and gets the team's answer — vetted, sourced, with decision trace. "I want to be asked fewer questions" made literal.</p>
+    <!-- ══════════════════════════════════════
+         REVIEW WORKFLOW
+    ══════════════════════════════════════ -->
+    <div class="doc-section" id="section-review-workflow">
+      <div class="doc-eyebrow">The Platform</div>
+      <h1 class="doc-h1">Review <em>workflow</em></h1>
+      <p class="doc-lead">The human-in-the-loop gate. Nothing becomes truth without it. The mechanic is a GitHub pull request. The language is plain English.</p>
 
-        <h2>3 — Context Import</h2>
-        <p>Drop in existing docs — markdown, Notion exports, Confluence exports. dovetell extracts decisions, assumptions, and definitions. Everything starts unvetted. First value in under an hour.</p>
+      <h2>Context change requests</h2>
+      <p>When a context item is proposed or updated, it does not overwrite existing truth. It enters the queue as a proposed change — sitting alongside the current vetted version until an Approver acts.</p>
 
-        <h2>4 — Unvetted Queue</h2>
-        <p>The human-in-the-loop gate. Every automated update lands here first. The PM accepts, edits, rejects, or defers. Accepted items become vetted truth. This is where tribal knowledge stops being tribal.</p>
+      <table>
+        <tr><th>GitHub concept</th><th>dovetell equivalent</th></tr>
+        <tr><td>Branch</td><td>Proposed change to a vetted item</td></tr>
+        <tr><td>Pull request</td><td>Change request in the review queue</td></tr>
+        <tr><td>Reviewer</td><td>Approver</td></tr>
+        <tr><td>Merge</td><td>Accept — item becomes new truth</td></tr>
+        <tr><td>Diff view</td><td>Old version vs. proposed, in plain English</td></tr>
+        <tr><td>Audit log</td><td>Vet history — who changed what, when</td></tr>
+      </table>
 
-        <table>
-          <tr><th>Capability</th><th>Feeds</th><th>Status</th></tr>
-          <tr><td>Import (3)</td><td>Queue (4)</td><td>Planned</td></tr>
-          <tr><td>Queue (4)</td><td>Console (1)</td><td>Planned</td></tr>
-          <tr><td>Console (1)</td><td>surfaces Queue (4)</td><td>Planned</td></tr>
-          <tr><td>Queue (4)</td><td>Query (2)</td><td>Planned</td></tr>
-        </table>
+      <h2>The non-technical reviewer UI</h2>
+      <p>Viewers see a different surface than Approvers. No queue. No diff syntax. No markdown.</p>
+      <ul>
+        <li>Plain English only — no raw markdown ever shown</li>
+        <li>One item at a time — not a dashboard</li>
+        <li>Two actions: <strong>"Looks right"</strong> or <strong>"Something's off"</strong></li>
+        <li>Flags route to the Approver with an optional note</li>
+        <li>Mobile-first — ops leads and legal reviewers review on their phones</li>
+      </ul>
+
+      <p>The same context base that feeds a developer's <code>@dovetell</code> query also surfaces to a non-technical teammate in plain English. dovetell is valuable beyond the engineering team.</p>
+
+      <h2>Competitive position</h2>
+      <p>dovetell sits between GitHub PR (rigorous, developer-only) and Google Docs suggestion mode (accessible, no audit trail). The only workflow built for both technical and non-technical reviewers with a full vet history.</p>
+
+      <h2>Sharing — phased approach</h2>
+      <table>
+        <tr><th>Phase</th><th>Sharing model</th></tr>
+        <tr><td>Phase 1 — now</td><td>User owns their data. Terms of use in every Gumroad purchase. No platform sharing features.</td></tr>
+        <tr><td>Phase 2 v1</td><td>Shareable read-only link for single context items. Owner-controlled, off by default. No account required to view.</td></tr>
+        <tr><td>Phase 2 v2</td><td>Sequential approval, full audit trail, governance toggle per project. Unlocks regulated industries.</td></tr>
+      </table>
+
+      <div class="callout-warn callout">
+        <p>Sequential approval (Phase 2 v2) — the DocuSign model for context — is planned but not yet specified. Trigger: Phase 2 v1 validates the sharing use case.</p>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         CAPABILITIES
+    ══════════════════════════════════════ -->
+    <div class="doc-section" id="section-capabilities">
+      <div class="doc-eyebrow">The Platform</div>
+      <h1 class="doc-h1"><em>Capabilities</em></h1>
+      <p class="doc-lead">Five capabilities. The queue is the connective tissue — nothing becomes truth without it.</p>
+
+      <h2>Context Console</h2>
+      <p>The dashboard. A context health monitor, not a document editor. Opens at standup — sees the drift score, unvetted count, stale definitions, decisions captured this sprint. Four quadrant cards: Decisions, Assumptions, Definitions, Policies.</p>
+
+      <h2>Unvetted Queue</h2>
+      <p>The human-in-the-loop gate. Every automated update lands here first. Accept, edit, reject, or defer. Accepted items become vetted truth. This is where tribal knowledge stops being tribal. Includes diff view for proposed changes to existing vetted items.</p>
+
+      <h2>Context Import</h2>
+      <p>Drop in existing docs — markdown, Notion exports, Confluence exports, PDFs. dovetell extracts decisions, assumptions, and definitions via local or BYOK inference. Everything starts unvetted. First value in under an hour.</p>
+
+      <h2>Context Query — MCP Server</h2>
+      <p>dovetell as an MCP server. Developer types <code>@dovetell what's our data retention policy?</code> inside Cursor or Claude Code. Gets the team's vetted answer — sourced, with decision trace. "I want to be asked fewer questions" made literal.</p>
+
+      <h2>Context Health Monitor</h2>
+      <p>A drift score (0–100) per project. Surfaces stale items, unvetted queue length, and gaps flagged by the context analyzer. Formula TBD — not shipping until calibrated against real team data.</p>
+
+      <div class="callout-warn callout">
+        <p>All capabilities are planned for Phase 2. None are currently live. The assessment and prompt library are Phase 1.</p>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         DEFINITIONS
+    ══════════════════════════════════════ -->
+    <div class="doc-section" id="section-definitions">
+      <div class="doc-eyebrow">Reference</div>
+      <h1 class="doc-h1"><em>Definitions</em></h1>
+      <p class="doc-lead">Shared vocabulary. When a term appears in dovetell documentation or code, it means what is defined here.</p>
+
+      <h2>Core concepts</h2>
+      <p><strong>context base</strong> — The living collection of decisions, assumptions, definitions, and policies that governs how a team's AI-assisted work should behave. Lives in <code>.dovetell-context/</code> in the team's git repo.</p>
+      <p><strong>context drift</strong> — The gap that grows between what a team's documents say and what the code or work actually does.</p>
+      <p><strong>context orchestration</strong> — Assembling, aligning, and delivering the right context to the right person or tool at the right time.</p>
+      <p><strong>tribal knowledge failure</strong> — Domain context that lives in one person's head and never gets captured.</p>
+      <p><strong>unvetted</strong> — Status for any item captured automatically but not yet reviewed by a human. Cannot be queried as authoritative.</p>
+      <p><strong>vetted</strong> — Status for any item reviewed and accepted by an Approver or Owner. Authoritative. Queryable.</p>
+      <p><strong>decision trace</strong> — A record of what was decided, when, by whom, and why. Surfaced alongside query responses.</p>
+      <p><strong>drift score</strong> — A metric (0–100) indicating how far a team's documented context has drifted from their actual work.</p>
+      <p><strong>context change request</strong> — A proposed change to a vetted item. Does not overwrite truth until accepted. Equivalent to a git pull request for context.</p>
+      <p><strong>renderer</strong> — dovetell's self-description. It reads, renders, and writes back to files in the team's repo. It does not own the data.</p>
+
+      <h2>Four content types</h2>
+      <p><strong>decision</strong> — Something the team chose. "We standardize on OpenTelemetry for all new services." Has an owner, a date, and optionally a rationale.</p>
+      <p><strong>definition</strong> — A term the team uses with a specific meaning. "Service boundary: the line between ingestion and processing layers."</p>
+      <p><strong>assumption</strong> — Something the team takes as true but hasn't formally decided. "AWS is our primary cloud provider." May need to become a decision.</p>
+      <p><strong>policy</strong> — A rule the team follows. "All data retained 180 days, then purged." Usually has compliance implications.</p>
+
+      <h2>ID definitions</h2>
+      <p><strong>uid</strong> (userId) — Permanent per browser. Ties all projects for one person together.</p>
+      <p><strong>pid</strong> (projectId) — One per project. Persists across retakes. Enables growth tracking.</p>
+      <p><strong>aid</strong> (assessmentId) — Fresh per submission. Tracks individual runs within a project.</p>
+      <p><strong>vid</strong> (versionId) — Which question set. Currently <code>v01</code>.</p>
+      <p><strong>task-[8char]</strong> — Task GUID. 8-character nanoid, generated on task creation.</p>
+      <p><strong>decision-[8char]</strong> — Decision GUID. 8-character hash. Enables cross-file linking between tasks.md, decisions.md, and other context files.</p>
+      <p><strong>session hash</strong> — 8-character sha256-derived hash per Claude work session. Embedded in chat titles as <code>(2a2d3774)</code>. Used as the <code>source:</code> field on Claude-generated tasks and decisions. Allows tracing any artifact back to its originating conversation.</p>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         DECISIONS LOG
+    ══════════════════════════════════════ -->
+    <div class="doc-section" id="section-decisions">
+      <div class="doc-eyebrow">Reference</div>
+      <h1 class="doc-h1">Decisions <em>log</em></h1>
+      <p class="doc-lead">Key decisions that shaped the product. One file, scannable, honest about tradeoffs. Full log in <code>.dovetell-context/decisions.md</code>.</p>
+
+      <h2>Architecture</h2>
+      <table>
+        <tr><th>Decision</th><th>Rationale</th></tr>
+        <tr><td>Repo as source of truth</td><td>dovetell never owns context data. Context lives in .dovetell-context/ in the team's repo. No markdown stored in dovetell's database.</td></tr>
+        <tr><td>BYOK / local inference only</td><td>Not in the API cost business. Trust signal for regulated industries. dovetell never calls external AI on your behalf.</td></tr>
+        <tr><td>Four roles, no custom roles</td><td>Maps to accountability not org chart. Prevents permission sprawl (the Teams/SharePoint failure mode).</td></tr>
+        <tr><td>Context change request model</td><td>Proposed changes don't overwrite truth. PR mechanic in plain English. Diff view for non-technical reviewers.</td></tr>
+        <tr><td>Flat append for tasks.md</td><td>File is a chronological log. UI handles grouping. Markdown stays portable and simple.</td></tr>
+        <tr><td>GUID pattern (8-char nanoid)</td><td>Short enough to copy, unique enough to reference. Enables cross-file linking. task-[8] · decision-[8].</td></tr>
+      </table>
+
+      <h2>Assessment architecture</h2>
+      <table>
+        <tr><th>Decision</th><th>Rationale</th></tr>
+        <tr><td>Client-side ID generation</td><td>No backend required at Phase 1. IDs sent to Formspree for backloading when Postgres ships.</td></tr>
+        <tr><td>uid permanent per browser</td><td>Ties projects to a person without requiring account creation.</td></tr>
+        <tr><td>Unanswered questions score 0</td><td>Defaulting to 1 caused artificial scores on empty submissions.</td></tr>
+        <tr><td>dovetell-data.json as content source</td><td>Questions and thresholds not hardcoded in HTML. Single source of truth for assessment content.</td></tr>
+      </table>
+
+      <h2>Infrastructure</h2>
+      <table>
+        <tr><th>Decision</th><th>Rationale</th></tr>
+        <tr><td>GitHub Pages over Carrd</td><td>Free, version controlled, no character limits, clean URLs. Carrd cancelled May 2026.</td></tr>
+        <tr><td>.dovetell-context/ folder</td><td>dovetell running on itself. Single source of truth for product context.</td></tr>
+        <tr><td>Plausible for analytics</td><td>Privacy-first, cookieless, no personal data.</td></tr>
+        <tr><td>Task queue in separate repo</td><td>dovetell-io/sandbox holds tasks.md. Air gap from product repo. Fine-grained PAT scoped to sandbox only.</td></tr>
+      </table>
+
+      <h2>Naming</h2>
+      <table>
+        <tr><th>Decision</th><th>Rationale</th></tr>
+        <tr><td>lowercase dovetell, always</td><td>Signals modern, understated, confident. notion, linear, figma register.</td></tr>
+        <tr><td>dovetell as placeholder name</td><td>Pre-revenue name change is cheap. Post-traction is expensive. dovemind is the leading candidate — deferred pending validation.</td></tr>
+      </table>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         PRIVACY
+    ══════════════════════════════════════ -->
+    <div class="doc-section" id="section-privacy">
+      <div class="doc-eyebrow">Reference</div>
+      <h1 class="doc-h1"><em>Privacy</em></h1>
+      <p class="doc-lead">Plain English. No surprises.</p>
+
+      <h2>What we collect</h2>
+      <p><strong>Required:</strong> email address only.</p>
+      <p><strong>Optional:</strong> project name, role, team size, company, industry, primary AI tool, how you found us.</p>
+      <p><strong>Automatically:</strong> assessment scores, section breakdown, raw answers, skip count, unique IDs (uid/pid/aid/vid), submission timestamp.</p>
+
+      <h2>How we use it</h2>
+      <ul>
+        <li>To send you your results and unique tracking link</li>
+        <li>To enable progress tracking over time via your pid</li>
+        <li>The dovetell product team sees scores to improve the product</li>
+        <li>Occasional product updates — opt out any time by replying "unsubscribe"</li>
+      </ul>
+
+      <h2>What we don't do</h2>
+      <ul>
+        <li>Never sell your data to anyone</li>
+        <li>Never share with third parties or advertisers</li>
+        <li>No cookies (Plausible analytics is cookieless)</li>
+        <li>No tracking pixels</li>
+      </ul>
+
+      <h2>Platform data (Phase 2)</h2>
+      <p>When the platform ships, dovetell will store identity and state only — user IDs, project IDs, queue state, vet history, sync timestamps, assessment scores. No markdown content is ever stored. Your decisions, definitions, assumptions, and policies stay in your repo. Always.</p>
+
+      <div class="callout-green callout">
+        <p><strong>The principle:</strong> dovetell is a renderer, not an owner. We can't sell what we don't store.</p>
       </div>
 
-      <!-- DEFINITIONS -->
-      <div class="doc-section" id="section-definitions">
-        <div class="doc-eyebrow">Reference</div>
-        <h1 class="doc-h1"><em>Definitions</em></h1>
-        <p class="doc-lead">Shared vocabulary. When a term is used in dovetell documentation or code, it means what's defined here.</p>
+      <h2>Project name disclaimer</h2>
+      <p>The project name field in the assessment gate says: <em>"⚠ Don't include sensitive, confidential, or proprietary information here."</em> dovetell is not a secure document store.</p>
 
-        <h2>Core concepts</h2>
-        <p><strong>context base</strong> — The living collection of decisions, assumptions, definitions, and policies that governs how a team's AI-assisted work should behave.</p>
-        <p><strong>context drift</strong> — The gap that grows between what a team's documents say and what the code or work actually does.</p>
-        <p><strong>context orchestration</strong> — Assembling, aligning, and delivering the right context to the right person or tool at the right time.</p>
-        <p><strong>tribal knowledge failure</strong> — Domain context that lives in one person's head and never gets captured.</p>
-        <p><strong>unvetted</strong> — Status for any item captured automatically but not yet reviewed by a human.</p>
-        <p><strong>vetted</strong> — Status for any item reviewed and accepted by a designated reviewer. Authoritative.</p>
-        <p><strong>decision trace</strong> — A record of what was decided, when, by whom, under which policy.</p>
-        <p><strong>drift score</strong> — A metric (0–100) indicating how far a team's documented context has drifted from their actual work.</p>
-        <p><strong>dog food loop</strong> — Using dovetell to manage the context of building dovetell. Active from day one.</p>
-
-        <h2>ID definitions</h2>
-        <p><strong>uid</strong> (userId) — Permanent per browser. Generated once on first submission. Ties all projects for one person together.</p>
-        <p><strong>pid</strong> (projectId) — One per project or team. Persists across retakes. Enables growth tracking.</p>
-        <p><strong>aid</strong> (assessmentId) — Fresh per submission. Tracks individual runs within a project.</p>
-        <p><strong>vid</strong> (versionId) — Which question set. Currently <code>v01</code>. Bumped when questions change.</p>
+      <div class="callout">
+        <p>Full privacy policy: <a href="https://dovetell.io/privacy">dovetell.io/privacy</a></p>
       </div>
+    </div>
 
-      <!-- DECISIONS -->
-      <div class="doc-section" id="section-decisions">
-        <div class="doc-eyebrow">Reference</div>
-        <h1 class="doc-h1">Decisions <em>log</em></h1>
-        <p class="doc-lead">Key decisions that shaped the product. One file, scannable, honest about tradeoffs.</p>
-
-        <h2>Assessment architecture</h2>
-        <table>
-          <tr><th>Decision</th><th>Rationale</th></tr>
-          <tr><td>Client-side ID generation</td><td>No backend required; IDs sent to Formspree for backloading when Postgres exists</td></tr>
-          <tr><td>uid permanent per browser</td><td>Ties projects to a person without requiring account creation</td></tr>
-          <tr><td>pid persists across retakes</td><td>Enables growth tracking per project</td></tr>
-          <tr><td>Unanswered questions score 0</td><td>Defaulting to 1 caused artificial scores on empty submissions</td></tr>
-          <tr><td>Page separation (assessment / assessments / recommendations)</td><td>Each page one job; retake loop prevention</td></tr>
-          <tr><td>dovetell-data.json as content source</td><td>Questions and thresholds not hardcoded in HTML</td></tr>
-        </table>
-
-        <h2>Infrastructure</h2>
-        <table>
-          <tr><th>Decision</th><th>Rationale</th></tr>
-          <tr><td>GitHub Pages over Carrd</td><td>Free, version controlled, no character limits, clean URLs</td></tr>
-          <tr><td>BYOK / local inference only</td><td>Not in the API cost business; trust signal for regulated industries</td></tr>
-          <tr><td>.dovetell-context/ folder</td><td>Hidden folder convention; dovetell running on itself</td></tr>
-        </table>
-
-        <h2>Privacy</h2>
-        <table>
-          <tr><th>Decision</th><th>Rationale</th></tr>
-          <tr><td>Scores seen by product team, not sold/shared</td><td>Honest disclosure without alarming language</td></tr>
-          <tr><td>Project name field with proprietary content disclaimer</td><td>Protects IP boundary; sets expectations before input</td></tr>
-        </table>
-      </div>
-
-      <!-- PRIVACY -->
-      <div class="doc-section" id="section-privacy">
-        <div class="doc-eyebrow">Reference</div>
-        <h1 class="doc-h1"><em>Privacy</em></h1>
-        <p class="doc-lead">Plain English. No surprises.</p>
-
-        <h2>What we collect</h2>
-        <p><strong>Required:</strong> email address only.</p>
-        <p><strong>Optional:</strong> project name, role, team size, company, industry, primary AI tool, how you found us.</p>
-        <p><strong>Automatically:</strong> assessment scores, section breakdown, raw answers, skip count, unique IDs (uid/pid/aid/vid), timestamp.</p>
-
-        <h2>How we use it</h2>
-        <ul>
-          <li>To send you your results and unique tracking link</li>
-          <li>To enable progress tracking over time (via pid)</li>
-          <li>The dovetell product team sees your scores to improve the product</li>
-          <li>Occasional product updates — opt out any time by replying "unsubscribe"</li>
-        </ul>
-
-        <h2>What we don't do</h2>
-        <ul>
-          <li>Never sell your data</li>
-          <li>Never share with third parties or advertisers</li>
-          <li>No cookies (Plausible analytics is cookieless)</li>
-          <li>No tracking pixels</li>
-        </ul>
-
-        <div class="callout">
-          <p>Full privacy policy: <a href="https://dovetell.io/privacy">dovetell.io/privacy</a></p>
-        </div>
-
-        <h2>Project name disclaimer</h2>
-        <p>The project name field shown in the assessment gate says: <em>"⚠ Don't include sensitive, confidential, or proprietary information here."</em> We mean it. dovetell is not a secure document store.</p>
-      </div>
-
-    </div><!-- /content -->
-  </div><!-- /main -->
+  </div><!-- /content -->
+</div><!-- /main -->
 </div><!-- /shell -->
 
 <script>
 const sections = {
-  'overview':       {label:'Introduction',      crumb:'What is dovetell?'},
-  'why':            {label:'Introduction',       crumb:'Why it exists'},
-  'positioning':    {label:'Introduction',       crumb:'Where it fits'},
-  'maturity':       {label:'The Assessment',     crumb:'Maturity model'},
-  'how-assessment': {label:'The Assessment',     crumb:'How it works'},
-  'scoring':        {label:'The Assessment',     crumb:'Scoring'},
-  'tracking':       {label:'The Assessment',     crumb:'Tracking over time'},
-  'platform':       {label:'The Platform',       crumb:'Phase 2 overview'},
-  'capabilities':   {label:'The Platform',       crumb:'Capabilities'},
-  'definitions':    {label:'Reference',          crumb:'Definitions'},
-  'decisions':      {label:'Reference',          crumb:'Decisions log'},
-  'privacy':        {label:'Reference',          crumb:'Privacy'},
-};
-
-function show(id) {
-  // Hide all sections
-  document.querySelectorAll('.doc-section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-
-  // Show target
-  document.getElementById('section-' + id).classList.add('active');
-
-  // Update active nav link
-  document.querySelectorAll('.nav-link').forEach(l => {
-    if (l.getAttribute('onclick') && l.getAttribute('onclick').includes("'" + id + "'")) {
-      l.classList.add('active');
-    }
-  });
-
-  // Update breadcrumb
-  const meta = sections[id];
-  if (meta) {
-    document.getElementById('breadcrumb-current').textContent = meta.crumb;
-  }
-
-  // Scroll to top of content
-  document.querySelector('.main').scrollTo({top: 0, behavior: 'smooth'});
-
-  // Close mobile sidebar
-  document.getElementById('sidebar').classList.remove('open');
-
-  // Update URL hash
-  window.history.replaceState(null, '', '#' + id);
+  'overview':        {crumb:'What is dovetell?'},
+  'why':             {crumb:'Why it exists'},
+  'positioning':     {crumb:'Where it fits'},
+  'modes':           {crumb:'Who can use it'},
+  'maturity':        {crumb:'Maturity model'},
+  'how-assessment':  {crumb:'How it works'},
+  'scoring':         {crumb:'Scoring'},
+  'tracking':        {crumb:'Tracking over time'},
+  'platform':        {crumb:'Phase 2 overview'},
+  'roles':           {crumb:'Roles'},
+  'review-workflow': {crumb:'Review workflow'},
+  'capabilities':    {crumb:'Capabilities'},
+  'definitions':     {crumb:'Definitions'},
+  'decisions':       {crumb:'Decisions log'},
+  'privacy':         {crumb:'Privacy'},
 }
 
-// Handle hash on load
+function show(id) {
+  document.querySelectorAll('.doc-section').forEach(s => s.classList.remove('active'))
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'))
+  const section = document.getElementById('section-' + id)
+  if (section) section.classList.add('active')
+  document.querySelectorAll('.nav-link').forEach(l => {
+    if (l.getAttribute('onclick') === `show('${id}')`) l.classList.add('active')
+  })
+  const meta = sections[id]
+  if (meta) document.getElementById('breadcrumb-current').textContent = meta.crumb
+  document.querySelector('.main').scrollTo({top:0, behavior:'smooth'})
+  document.getElementById('sidebar').classList.remove('open')
+  window.history.replaceState(null, '', '#' + id)
+}
+
 window.addEventListener('DOMContentLoaded', () => {
-  const hash = window.location.hash.replace('#', '');
-  if (hash && sections[hash]) show(hash);
-});
+  const hash = window.location.hash.replace('#', '')
+  if (hash && sections[hash]) show(hash)
+})
 </script>
 </body>
 </html>
