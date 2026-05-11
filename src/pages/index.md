@@ -13,6 +13,7 @@ Start here:
 - [What is dovetell?](/intro/what-is-dovetell)
 - [Context debt](/intro/context-debt)
 - [Get started with the core loop](/guides/get-started-core-loop)
+- [Assessment overview](/assessment/overview)
 - [Templates overview](/templates/overview)
 - [Docs architecture](/architecture/docs-architecture)
 

@@ -24,12 +24,35 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'Assessment',
+      collapsed: false,
+      items: [
+        'assessment/overview',
+        'assessment/maturity-model',
+        'assessment/how-it-works',
+        'assessment/scoring',
+        'assessment/tracking-over-time',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Framework',
       collapsed: false,
       items: [
         'framework/context-governance-schema',
         'framework/context-governance-rings',
         'framework/reconciliation',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Platform Direction',
+      collapsed: false,
+      items: [
+        'platform/overview',
+        'platform/roles',
+        'platform/review-workflow',
+        'platform/capabilities',
       ],
     },
     {
