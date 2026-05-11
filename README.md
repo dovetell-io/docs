@@ -1,27 +1,54 @@
 # dovetell docs
 
-Documentation for [dovetell](https://dovetell.io) — the context orchestration layer for AI-assisted software teams.
+Public documentation for [dovetell](https://dovetell.io).
 
-**Live at:** [docs.dovetell.io](https://docs.dovetell.io)
+Live site: [docs.dovetell.io](https://docs.dovetell.io)
 
----
+This repo is the durable public docs surface for dovetell. It is built as a
+Docusaurus docs-as-code site and published to GitHub Pages.
 
-## What's here
+## Source boundaries
 
-- What dovetell is and why it exists
-- The Team AI Maturity Model (four levels, six capability areas)
-- How the assessment works and how scores are calculated
-- Tracking your team's progress over time
-- Phase 2 platform capabilities
-- Definitions, decisions log, and privacy reference
+Use this repo for public, reviewed documentation.
 
-## Contributing
+Use `dovetell-io/dovetell-assets` for source assets, package candidates,
+templates, schemas, and paid-package staging material before promotion.
 
-Found something wrong or missing? Open an issue or PR.
-This documentation is licensed under [CC BY 4.0](./LICENSE) — share and adapt freely with attribution.
+Do not copy private strategy, customer details, credentials, internal launch
+notes, or unreviewed package source into this repo.
+
+## Local development
+
+```bash
+npm install
+npm run start
+```
+
+Build the static site:
+
+```bash
+npm run build
+```
+
+## Structure
+
+```text
+docs/
+  intro/          concepts and positioning
+  guides/         task-oriented public guides
+  framework/      context governance explanations
+  templates/      public and paid template guidance
+  reference/      glossary, privacy, decisions
+  architecture/   docs system architecture
+```
+
+## Style
+
+Write public docs in clear, direct, task-oriented Markdown. Prefer short pages,
+descriptive headings, private-safe examples, and reviewed claims.
 
 ## Related
 
-- [dovetell.io](https://dovetell.io) — main site
-- [dovetell-io/dovetell](https://github.com/dovetell-io/dovetell) — product repo
-- [dovetell.io/team-assessment](https://dovetell.io/team-assessment) — take the assessment
+- [dovetell.io](https://dovetell.io)
+- [dovetell-io/docs](https://github.com/dovetell-io/docs)
+- `dovetell-io/dovetell-assets` source assets repo

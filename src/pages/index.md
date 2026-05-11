@@ -1,0 +1,21 @@
+---
+title: dovetell docs
+description: Public documentation for dovetell context governance.
+---
+
+# dovetell docs
+
+dovetell helps AI-assisted software teams preserve decisions, context, and
+operating knowledge across tools and sessions.
+
+Start here:
+
+- [What is dovetell?](/intro/what-is-dovetell)
+- [Context debt](/intro/context-debt)
+- [Get started with the core loop](/guides/get-started-core-loop)
+- [Templates overview](/templates/overview)
+- [Docs architecture](/architecture/docs-architecture)
+
+The docs are early and intentionally lightweight. Public pages explain stable
+concepts and reviewed guidance. Template source and paid package material are
+kept separate until promoted.
