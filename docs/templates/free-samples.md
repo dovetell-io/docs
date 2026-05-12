@@ -24,32 +24,47 @@ Free samples should not:
 - imply that draft material is canonical
 - create confusion about licensing
 
-## Recommended free surface
+## Minimal repo context starter
 
-Start with:
+Start here if your assessment recommended the Minimal Repo Context Starter.
 
-- one context loop primer
-- one core checklist
-- one minimal sample context file
-- one short guide that points to the paid package
+This sample gives you a tiny repo-owned context loop:
 
-This gives buyers a real taste without turning the public docs into the entire
-product.
+- `manifest.md`: what the repo is and what counts as truth
+- `session-handoff.md`: where the next session should resume
+- `tasks.md`: active commitments only
+- `decisions.md`: durable decisions and rationale
+- `agent-prompt.md`: prompt for adapting the starter to a real repo
 
-## Best first free sample
+Download or inspect the files:
 
-The strongest first sample is a minimal repo context starter:
+<ul>
+  <li><a href="/templates/minimal-repo-context-starter.zip">Download the starter zip</a></li>
+  <li><a href="/templates/minimal-repo-context-starter/README.md">Starter README</a></li>
+  <li><a href="/templates/minimal-repo-context-starter/agent-prompt.md">Agent prompt</a></li>
+  <li><a href="/templates/minimal-repo-context-starter/project-context/manifest.md">manifest.md</a></li>
+  <li><a href="/templates/minimal-repo-context-starter/project-context/session-handoff.md">session-handoff.md</a></li>
+  <li><a href="/templates/minimal-repo-context-starter/project-context/tasks.md">tasks.md</a></li>
+  <li><a href="/templates/minimal-repo-context-starter/project-context/decisions.md">decisions.md</a></li>
+</ul>
 
-- a one-page context loop primer
-- a core setup checklist
-- a minimal `manifest.md`
-- a minimal `session-handoff.md`
-- a minimal `tasks.md`
-- one prompt an agent can run to adapt the files to a repo
+Copy the `project-context/` folder into your repo. If your repo already uses a
+folder convention such as `.project-context/`, rename the copied folder to match
+that convention.
 
 This is useful for solo developers and small teams because it solves the
 immediate pain: the agent starts with repo-owned context instead of making the
 human re-explain everything.
+
+## Core setup checklist
+
+1. Identify the repo role.
+2. Decide what information is allowed in this repo.
+3. Fill in `manifest.md`.
+4. Put only active work in `tasks.md`.
+5. Record only durable decisions in `decisions.md`.
+6. Update `session-handoff.md` before ending the session.
+7. Ask your agent what it intentionally did not add.
 
 ## Agent prompt
 
