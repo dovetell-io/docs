@@ -15,7 +15,6 @@ Start here:
 - [Get started with the core loop](/guides/get-started-core-loop)
 - [Assessment overview](/assessment/overview)
 - [Templates overview](/templates/overview)
-- [Docs architecture](/architecture/docs-architecture)
 
 The docs are early and intentionally lightweight. Public pages explain stable
 concepts and reviewed guidance. Template source and paid package material are

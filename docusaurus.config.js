@@ -73,10 +73,6 @@ const config = {
               label: 'Templates',
               to: '/templates/overview',
             },
-            {
-              label: 'Docs architecture',
-              to: '/architecture/docs-architecture',
-            },
           ],
         },
         {

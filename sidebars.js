@@ -31,7 +31,7 @@ const sidebars = {
         'assessment/maturity-model',
         'assessment/how-it-works',
         'assessment/scoring',
-        'assessment/tracking-over-time',
+        'assessment/track-improvement',
       ],
     },
     {
@@ -42,17 +42,6 @@ const sidebars = {
         'framework/context-governance-schema',
         'framework/context-governance-rings',
         'framework/reconciliation',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Platform Direction',
-      collapsed: false,
-      items: [
-        'platform/overview',
-        'platform/roles',
-        'platform/review-workflow',
-        'platform/capabilities',
       ],
     },
     {
@@ -73,14 +62,6 @@ const sidebars = {
         'reference/glossary',
         'reference/privacy',
         'reference/decisions',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Architecture',
-      collapsed: false,
-      items: [
-        'architecture/docs-architecture',
       ],
     },
   ],
