@@ -36,7 +36,19 @@ This sample gives you a tiny repo-owned context loop:
 - `decisions.md`: durable decisions and rationale
 - `agent-prompt.md`: prompt for adapting the starter to a real repo
 
-Download or inspect the files:
+Clone or fork the public sample repo:
+
+```sh
+git clone https://github.com/dovetell-io/sample.git
+```
+
+Start with:
+
+- [Minimal Repo Context Starter on GitHub](https://github.com/dovetell-io/sample/tree/main/minimal-repo-context-starter)
+- [Sample repo lineage](https://github.com/dovetell-io/sample/blob/main/LINEAGE.md)
+
+Prefer the repo if you want fork metrics, git history, or a cloneable example.
+Use the zip when you just want the files:
 
 <ul>
   <li><a href="/templates/minimal-repo-context-starter.zip">Download the starter zip</a></li>
