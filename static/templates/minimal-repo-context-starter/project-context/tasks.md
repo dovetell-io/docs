@@ -8,16 +8,13 @@ soon, leave it out or move it to a separate backlog.
 ## Active Tasks
 
 - [ ] Replace with a specific active task
-  id: task-YYYYMMDD-short-name
-  owner: replace-me
-  status: open
-  priority: now
-  updated: YYYY-MM-DD
-
-  Notes:
-    Describe the next concrete action, not the whole project history.
-
-  Done when:
+  - `id`: task-YYYYMMDD-short-name
+  - `owner`: replace-me
+  - `status`: open
+  - `priority`: now
+  - `updated`: YYYY-MM-DD
+  - `notes`: Describe the next concrete action, not the whole project history.
+  - `done when`:
     - Add one or two clear acceptance checks.
 
 ## Completed Tasks

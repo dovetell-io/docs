@@ -22,11 +22,11 @@ operations, or trust.
 ## Decisions
 
 - id: decision-sample-repo-owned-context
-  date: 2026-05-12
-  status: sample
-  decision: Keep project context in repo-owned Markdown.
-  rationale: The repo should remain readable and useful even without a specific
-    AI tool or SaaS product.
-  implications:
+  - `date`: 2026-05-12
+  - `status`: sample
+  - `decision`: Keep project context in repo-owned Markdown.
+  - `rationale`: The repo should remain readable and useful even without a
+    specific AI tool or SaaS product.
+  - `implications`:
     - Agents should read these files before broad implementation work.
     - Private or sensitive context should not be added to public repos.
