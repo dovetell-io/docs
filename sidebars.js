@@ -18,6 +18,7 @@ const sidebars = {
       collapsed: false,
       items: [
         'guides/get-started-core-loop',
+        'guides/agent-start-checklist',
         'guides/checkpoint-vs-closeout',
         'guides/public-repo-connected-context',
       ],
