@@ -45,7 +45,7 @@ git clone https://github.com/dovetell-io/sample.git
 Start with:
 
 - [Minimal Repo Context Starter on GitHub](https://github.com/dovetell-io/sample/tree/main/minimal-repo-context-starter)
-- [Sample repo lineage](https://github.com/dovetell-io/sample/blob/main/LINEAGE.md)
+- [Sample repo revisions](https://github.com/dovetell-io/sample/blob/main/REVISIONS.md)
 
 Prefer the repo if you want fork metrics, git history, or a cloneable example.
 Use the zip when you just want the files:
