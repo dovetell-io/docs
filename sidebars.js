@@ -9,7 +9,6 @@ const sidebars = {
       items: [
         'intro/what-is-dovetell',
         'intro/context-debt',
-        'intro/docs-as-code',
       ],
     },
     {
@@ -52,17 +51,6 @@ const sidebars = {
       items: [
         'templates/overview',
         'templates/free-samples',
-        'templates/paid-templates',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Reference',
-      collapsed: false,
-      items: [
-        'reference/glossary',
-        'reference/privacy',
-        'reference/decisions',
       ],
     },
   ],
