@@ -1,28 +1,10 @@
 ---
 title: Free samples
-description: Free samples should teach the pattern without replacing the paid package.
+description: Clone or download public Dovetell starter samples.
 ---
-
-Free samples should be useful enough to build trust and limited enough to keep
-the paid package meaningful.
 
 Use this page after [Get started with the core loop](/guides/get-started-core-loop)
 when you want a concrete starting point.
-
-Good free samples:
-
-- show the shape of the template
-- use fake or private-safe examples
-- explain when to use the template
-- include one clear next step
-- avoid unsupported product claims
-
-Free samples should not:
-
-- expose private strategy
-- include full paid package contents
-- imply that draft material is canonical
-- create confusion about licensing
 
 ## Minimal repo context starter
 
